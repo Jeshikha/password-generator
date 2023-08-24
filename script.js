@@ -88,9 +88,32 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
+// Function to prompt user for password options to get password criteria from user
 function getPasswordOptions() {
+  var length = parseInt(prompt("Enter the desired password length (between 8 and 128):"));
 
+  if (isNaN(length) || length < 8 || length > 128) {
+    alert("Please enter a valid password length.");
+    return;
+  }
+
+  var hasSpecialCharacters = confirm("Would you like to include special characters?");
+  var hasNumericCharacters = confirm("Would you like to include numeric characters?");
+  var hasLowercaseCharacters = confirm("Would you like to include lowercase characters?");
+  var hasUppercaseCharacters = confirm("Would you like to include uppercase characters?");
+
+  if (!hasSpecialCharacters && !hasNumericCharacters && !hasLowercaseCharacters && !hasUppercaseCharacters) {
+    alert("At least one character type should be selected.");
+    return;
+  }
+
+  return {
+    length: length,
+    hasSpecialCharacters: hasSpecialCharacters,
+    hasNumericCharacters: hasNumericCharacters,
+    hasLowercaseCharacters: hasLowercaseCharacters,
+    hasUppercaseCharacters: hasUppercaseCharacters
+  };
 }
 
 // Function for getting a random element from an array
