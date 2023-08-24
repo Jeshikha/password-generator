@@ -136,7 +136,8 @@ function getRandom(arr) {
   // The result is a floating-point index value. The Math.floor() function is used to round this value down 
   // to the nearest integer, ensuring that it's a valid index within the array.
   var randomIndex = Math.floor(Math.random() * arr.length);
-  // Returns the element from the input array arr at the randomly generated index randomIndex. 
+
+  // Returning the element from the input array arr at the randomly generated index randomIndex. 
   // This effectively provides a random element from the array.
   return arr[randomIndex];
 }
@@ -144,18 +145,70 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
 
+  // Getting Password Options by  calling the getPasswordOptions() function to retrieve 
+  // the user's selected password generation options and stores them in the options variable.
+  var options = getPasswordOptions();
+
+  if (!options) {
+    return ""; // Checking if the user entered invalid options. If options is false, the function returns an empty string, indicating that it couldn't generate a password.
+  }
+
+  var allPossibleCharacters = []; // Initialising an empty array to store all possible characters based on the selected options.
+
+  // Concatenating Special Characters 
+  // If the user chose to include special characters, 
+  // the specialCharacters array is concatenated with the allPossibleCharacters array.
+  if (options.hasSpecialCharacters) {
+    allPossibleCharacters = allPossibleCharacters.concat(specialCharacters);
+  }
+
+  // Concatenating Numeric Characters
+  if (options.hasNumericCharacters) {
+    allPossibleCharacters = allPossibleCharacters.concat(numericCharacters);
+  }
+  // Concatenating Lowercase Characters
+  if (options.hasLowercaseCharacters) {
+    allPossibleCharacters = allPossibleCharacters.concat(lowerCasedCharacters);
+  }
+  // Concatenating Uppercase Characters:
+  if (options.hasUppercaseCharacters) {
+    allPossibleCharacters = allPossibleCharacters.concat(upperCasedCharacters);
+  }
+  // Generating Password and then looping options.length times and in each iteration, 
+  // generates a random character using the getRandom() function from the concatenated array of all possible characters. 
+  var generatedPassword = "";
+
+  for (var i = 0; i < options.length; i++) {
+    var randomCharacter = getRandom(allPossibleCharacters);
+    generatedPassword += randomCharacter;
+  }
+
+  // After the loop, the function returns the generatedPassword, 
+  // which now contains the random password generated based on the user's selected options.
+  return generatedPassword;
 }
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
+// This line gets the HTML element with the ID "generate," which is expected to be a button element.
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
+  // This is the function that is called when the "Generate Password" button is clicked. 
+  // It calls the generatePassword() function to generate a password and then updates 
+  // the value of the passwordText element to display the generated password.
 
   passwordText.value = password;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+// This line adds an event listener to the "Generate Password" button.
+// It listens for the "click" event and when triggered, it calls the writePassword() function, 
+// which generates and displays the password.
+
+
+
