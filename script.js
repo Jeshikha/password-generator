@@ -127,8 +127,18 @@ function getPasswordOptions() {
 }
 
 // Function for getting a random element from an array
+
+// Defining a function named getRandom that accepts an array arr as a parameter.
 function getRandom(arr) {
 
+  // Generating a random floating-point number between 0 (inclusive) and 1 (exclusive) using Math.random(). 
+  // This number is then multiplied by the length of the array (arr.length) to map it to a valid index range. 
+  // The result is a floating-point index value. The Math.floor() function is used to round this value down 
+  // to the nearest integer, ensuring that it's a valid index within the array.
+  var randomIndex = Math.floor(Math.random() * arr.length);
+  // Returns the element from the input array arr at the randomly generated index randomIndex. 
+  // This effectively provides a random element from the array.
+  return arr[randomIndex];
 }
 
 // Function to generate password with user input
