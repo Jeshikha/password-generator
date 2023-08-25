@@ -228,7 +228,7 @@ function writePassword() {
     // If an error occurred or invalid input was provided
     bottomErrorMessage.textContent = 'Error: Please make valid selections to generate a password.';
     passwordText.value = ''; // Clearing the password field
-    // This is the function that is called when the "Generate Password" button is clicked. 
+    // This section is the function that is called when the "Generate Password" button is clicked. 
     // It calls the generatePassword() function to generate a password and then updates 
     // the value of the passwordText element to display the generated password.
   }
