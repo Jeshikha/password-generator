@@ -64,15 +64,18 @@ The following images shows the web application's appearance and functionality::
 ![prompt for choosing length of password](images/length.png)
 
 * Choosing Wrong Length Message
-![opening the code in the browser resulting analysis image](images/wronglength.png)
+![wrong input of length](images/wronglength.png)
 
 * Choosing character prompt message
-![opening the code in the browser resulting analysis image](images/chara.png)
+![character option Ok or Cancel](images/chara.png)
 
 * Not choosing any character types
-![opening the code in the browser resulting analysis image](images/nochar.png)
+![No character has been choosen](images/nochar.png)
 
 * Successful message after generating password
-![opening the code in the browser resulting analysis image](images/successful.png)
+![Successful password generated](images/successful.png)
+
+* Invalid or Wrong Input Error message 
+![error message for wrong input](images/invalid.png)
 
 
