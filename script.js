@@ -199,8 +199,11 @@ function writePassword() {
   // This is the function that is called when the "Generate Password" button is clicked. 
   // It calls the generatePassword() function to generate a password and then updates 
   // the value of the passwordText element to display the generated password.
-
   passwordText.value = password;
+
+  // adding a message that password has been successfully generated
+  var successMessage = document.querySelector('#success-message');
+  successMessage.textContent = 'Congratulations! Your New Password has been successfully generated!';
 }
 
 // Add event listener to generate button

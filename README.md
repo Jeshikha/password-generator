@@ -4,7 +4,7 @@
 
 This repository contains my solution to the Password Generator Challenge as part of this week's challenge. The goal of this challenge was to create a web application for employees, that they can use to generate a random password based on criteria they’ve selected. The application features a starter code of HTML and CSS, and refactoring functionalities all powered by JavaScript code. The outcome of the challenge was a functional and user-friendly password generator web application. It adhered to the instructions by generating passwords within the specified length, ensuring that at least one character type was selected, and displaying the generated password appropriately.
 
-## Instructions
+## Instructions followed
 
 The challenge required the application to which was successfully implemented as follows:
 
@@ -14,6 +14,10 @@ The challenge required the application to which was successfully implemented as 
   - Character types: Lowercase, Uppercase, Numeric, Special characters.
 - Validate each input and ensure at least one character type is selected.
 - Display the generated password either in an alert or on the page.
+
+## Success Message Enhancement
+
+To provide a better user experience, I implemented a success message that displays after a password is successfully generated. The message appears below the generated password input box. This feature enhances the feedback users receive when they generate a password.
 
 ## Challenges Faced
 
