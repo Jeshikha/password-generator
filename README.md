@@ -56,7 +56,7 @@ The URL of the GitHub repository:
 
 
 ## Screenshots of Deployed App
-The following image shows the web application's of the password generator:
+The following images shows the web application's appearance and functionality::
 * Webpage opening
 ![opening the code in the browser resulting analysis image](images/webpage.png)
 
