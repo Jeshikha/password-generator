@@ -104,7 +104,7 @@ function getPasswordOptions() {
   }
   // Gathering Character Type Preferences by using the confirm() function to interact with the user 
   // and gather preferences for including special, numeric, lowercase, and uppercase characters in the password.
-  var hasSpecialCharacters = confirm("Would you like to include special characters? (Click OK for 'Yes' or Cancel for 'No')");
+  var hasSpecialCharacters = confirm("Would you like to include special characters? (Click OK for 'Yes' or Cancel for 'No') (e.g @ # % () !)");
   var hasNumericCharacters = confirm("Would you like to include numeric characters? (Click OK for 'Yes' or Cancel for 'No')");
   var hasLowercaseCharacters = confirm("Would you like to include lowercase characters? (Click OK for 'Yes' or Cancel for 'No')");
   var hasUppercaseCharacters = confirm("Would you like to include uppercase characters? (Click OK for 'Yes' or Cancel for 'No')");
