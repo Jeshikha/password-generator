@@ -10,10 +10,11 @@ The challenge required the application to which was successfully implemented as 
 
 * Generating a password when the "Generate Password" button is clicked.
 * Prompting the user for password criteria:
-  - Length of password: At least 8 characters but no more than 128.
+  - Length of password: At least 8 characters but no more than 128 - if not wrong input message is popped out.
   - Character types: Lowercase, Uppercase, Numeric, Special characters.
-- Validate each input and ensure at least one character type is selected.
-- Display the generated password either in an alert or on the page.
+* Validating each input and ensure at least one character type is selected - if not wr.
+* Displaying the generated password either in an alert or on the page.
+* 
 
 ## Success Message Enhancement
 
@@ -47,5 +48,32 @@ I would like to express my gratitude to my mentors and classmates who provided g
 
 This project is licensed under the MIT License
 
-# Deployment - Useful Links to facilitate viewing of project
+## Deployment - Useful Links to facilitate viewing of project
+The URL of the deployed application:
+* https://jeshikha.github.io/password-generator/    
+
+The URL of the GitHub repository:
+* https://github.com/Jeshikha/password-generator 
+
+
+## Screenshots of Deployed App
+The following image shows the web application's of the password generator:
+* Webpage opening
+![opening the code in the browser resulting analysis image](images/webpage.png)
+
+* Choosing Length of Password
+![prompt for choosing length of password](images/length.png)
+
+* Choosing Wrong Length Message
+![opening the code in the browser resulting analysis image](images/wronglength.png)
+
+* Choosing character prompt message
+![opening the code in the browser resulting analysis image](images/chara.png)
+
+* Not choosing any character types
+![opening the code in the browser resulting analysis image](images/nochar.png)
+
+* Successful message after generating password
+![opening the code in the browser resulting analysis image](images/successful.png)
+
 
