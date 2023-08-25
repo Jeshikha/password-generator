@@ -125,6 +125,19 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
 }
+/* Added error messsage */
+#error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#bottom-error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center; /* Center the error message */
+}
 
 @media (max-width: 690px) {
   .btn {

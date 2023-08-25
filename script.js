@@ -100,6 +100,15 @@ function getPasswordOptions() {
   // If any of these conditions are met, an alert is shown, and the function returns early.
   if (isNaN(length) || length < 8 || length > 128) {
     alert("Please enter a valid password length.");
+
+    // Clear the success message
+    var successMessage = document.querySelector('#success-message');
+    successMessage.textContent = '';
+
+    // Display the bottom error message
+    var bottomErrorMessage = document.querySelector('#bottom-error-message');
+    bottomErrorMessage.textContent = 'Error: Please enter a valid password length.';
+
     return;
   }
   // Gathering Character Type Preferences by using the confirm() function to interact with the user 
@@ -113,6 +122,14 @@ function getPasswordOptions() {
   // If none are selected, an alert is shown, and the function returns early.
   if (!hasSpecialCharacters && !hasNumericCharacters && !hasLowercaseCharacters && !hasUppercaseCharacters) {
     alert("At least one character type should be selected.");
+
+    // Clear the success message
+    var successMessage = document.querySelector('#success-message');
+    successMessage.textContent = '';
+
+    // Display the bottom error message
+    var bottomErrorMessage = document.querySelector('#bottom-error-message');
+    bottomErrorMessage.textContent = 'Error: Please select at least one character type.';
     return;
   }
   // Returning Password Options the reason why it is key to contruct and return an object containing the gathered options: 
@@ -196,16 +213,23 @@ var generateBtn = document.querySelector('#generate');
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
-  // This is the function that is called when the "Generate Password" button is clicked. 
-  // It calls the generatePassword() function to generate a password and then updates 
-  // the value of the passwordText element to display the generated password.
-  passwordText.value = password;
-
-  // adding a message that password has been successfully generated
   var successMessage = document.querySelector('#success-message');
-  successMessage.textContent = 'Congratulations! Your New Password has been successfully generated!';
-}
+  var bottomErrorMessage = document.querySelector('#bottom-error-message');
 
+  successMessage.textContent = ''; // Clear any previous messages
+  bottomErrorMessage.textContent = ''; // Clear any previous messages
+
+  if (password !== '') {
+    successMessage.textContent = 'Congratulations! Your New Password has been successfully generated!';
+    passwordText.value = password;
+  } else {
+    bottomErrorMessage.textContent = 'Error: Please make valid selections to generate a password.';
+    passwordText.value = '';
+    // This is the function that is called when the "Generate Password" button is clicked. 
+    // It calls the generatePassword() function to generate a password and then updates 
+    // the value of the passwordText element to display the generated password.
+  }
+}
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
 // This line adds an event listener to the "Generate Password" button.
