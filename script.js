@@ -104,10 +104,10 @@ function getPasswordOptions() {
   }
   // Gathering Character Type Preferences by using the confirm() function to interact with the user 
   // and gather preferences for including special, numeric, lowercase, and uppercase characters in the password.
-  var hasSpecialCharacters = confirm("Would you like to include special characters?");
-  var hasNumericCharacters = confirm("Would you like to include numeric characters?");
-  var hasLowercaseCharacters = confirm("Would you like to include lowercase characters?");
-  var hasUppercaseCharacters = confirm("Would you like to include uppercase characters?");
+  var hasSpecialCharacters = confirm("Would you like to include special characters? (Click OK for 'Yes' or Cancel for 'No')");
+  var hasNumericCharacters = confirm("Would you like to include numeric characters? (Click OK for 'Yes' or Cancel for 'No')");
+  var hasLowercaseCharacters = confirm("Would you like to include lowercase characters? (Click OK for 'Yes' or Cancel for 'No')");
+  var hasUppercaseCharacters = confirm("Would you like to include uppercase characters? (Click OK for 'Yes' or Cancel for 'No')");
 
   // Validating Character Type Selection by checking if none of the character types have been selected. 
   // If none are selected, an alert is shown, and the function returns early.
@@ -141,7 +141,6 @@ function getRandom(arr) {
   // This effectively provides a random element from the array.
   return arr[randomIndex];
 }
-
 // Function to generate password with user input
 function generatePassword() {
 
@@ -209,6 +208,4 @@ generateBtn.addEventListener('click', writePassword);
 // This line adds an event listener to the "Generate Password" button.
 // It listens for the "click" event and when triggered, it calls the writePassword() function, 
 // which generates and displays the password.
-
-
 
