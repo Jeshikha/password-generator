@@ -101,11 +101,11 @@ function getPasswordOptions() {
   if (isNaN(length) || length < 8 || length > 128) {
     alert("Please enter a valid password length.");
 
-    // Clear the success message
+    // Clearing the success message if there is an error
     var successMessage = document.querySelector('#success-message');
     successMessage.textContent = '';
 
-    // Display the bottom error message
+    // Displaying the bottom error message
     var bottomErrorMessage = document.querySelector('#bottom-error-message');
     bottomErrorMessage.textContent = 'Error: Please enter a valid password length.';
 
@@ -123,11 +123,11 @@ function getPasswordOptions() {
   if (!hasSpecialCharacters && !hasNumericCharacters && !hasLowercaseCharacters && !hasUppercaseCharacters) {
     alert("At least one character type should be selected.");
 
-    // Clear the success message
+    // Clearing the success message if there is an error
     var successMessage = document.querySelector('#success-message');
     successMessage.textContent = '';
 
-    // Display the bottom error message
+    // Displaying the bottom error message
     var bottomErrorMessage = document.querySelector('#bottom-error-message');
     bottomErrorMessage.textContent = 'Error: Please select at least one character type.';
     return;
@@ -213,18 +213,21 @@ var generateBtn = document.querySelector('#generate');
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
-  var successMessage = document.querySelector('#success-message');
-  var bottomErrorMessage = document.querySelector('#bottom-error-message');
+  var successMessage = document.querySelector('#success-message'); // Getting a reference to the success message element
+  var bottomErrorMessage = document.querySelector('#bottom-error-message'); // Getting a reference to the bottom error message element
 
-  successMessage.textContent = ''; // Clear any previous messages
-  bottomErrorMessage.textContent = ''; // Clear any previous messages
+
+  successMessage.textContent = ''; // Clearing any previous messages by setting their content to an empty string.
+  bottomErrorMessage.textContent = ''; // Clearing any previous messages by setting their content to an empty string.
 
   if (password !== '') {
+    // If a password was generated successfully
     successMessage.textContent = 'Congratulations! Your New Password has been successfully generated!';
-    passwordText.value = password;
+    passwordText.value = password; // Setting the value of the password input field to the generated password
   } else {
+    // If an error occurred or invalid input was provided
     bottomErrorMessage.textContent = 'Error: Please make valid selections to generate a password.';
-    passwordText.value = '';
+    passwordText.value = ''; // Clearing the password field
     // This is the function that is called when the "Generate Password" button is clicked. 
     // It calls the generatePassword() function to generate a password and then updates 
     // the value of the passwordText element to display the generated password.

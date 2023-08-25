@@ -19,6 +19,15 @@ The challenge required the application to which was successfully implemented as 
 
 To provide a better user experience, I implemented a success message that displays after a password is successfully generated. The message appears below the generated password input box. This feature enhances the feedback users receive when they generate a password.
 
+## Error Handling
+
+If the user provides invalid input or doesn't select any character type for the password, appropriate error messages will be displayed:
+
+* If the user enters an invalid password length (less than 8 or greater than 128), an error message will be shown indicating that a valid password length should be entered.
+
+* If the user doesn't select at least one character type (special, numeric, lowercase, or uppercase), an error message will be shown indicating that at least one character type should be selected.
+
+
 ## Challenges Faced
 
 During this challenge, I faced difficulties in modifying the default `confirm()` prompt buttons to "Yes" and "No" instead of "Cancel" or "OK". After discussing the challenge with mentors and classmates, I realised that the `confirm()` function's behavior cannot be changed directly. I ended up updating the message instead to "Would you like to include special characters? (Click OK for 'Yes' or Cancel for 'No)".
