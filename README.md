@@ -12,9 +12,8 @@ The challenge required the application to which was successfully implemented as 
 * Prompting the user for password criteria:
   - Length of password: At least 8 characters but no more than 128 - if not wrong input message is popped out.
   - Character types: Lowercase, Uppercase, Numeric, Special characters.
-* Validating each input and ensure at least one character type is selected - if not wr.
+* Validating each input and ensure at least one character type is selected - if cancel chosen then no password generated due to no selection of any character types.
 * Displaying the generated password either in an alert or on the page.
-* 
 
 ## Success Message Enhancement
 
